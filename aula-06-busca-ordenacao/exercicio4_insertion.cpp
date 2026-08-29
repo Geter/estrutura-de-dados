@@ -1,3 +1,4 @@
+
 // ============================================================
 // Exercicio 4 - Insertion Sort
 // Estrutura de Dados - IFSP Campus Campos do Jordao
@@ -28,7 +29,7 @@ void mostrar(int itens[], int quantidade) {
 //
 // O laco de fora comeca em UM, e nao em zero, porque o
 // primeiro elemento sozinho ja e um trecho ordenado:
-//     for (int i = 1; i < quantidade; i++) {
+//    for (int i = 1; i < quantidade; i++) {
 //
 // Dentro dele:
 //
@@ -54,7 +55,17 @@ void mostrar(int itens[], int quantidade) {
 
 void insertionSort(int itens[], int quantidade) {
 
-    // escreva aqui
+    for (int i = 1; i < quantidade; i++) {
+        int atual = itens[i];
+        int j = i - 1;
+
+        while (j >= 0 && itens[j] > atual) {
+            itens[j + 1] = itens[j];
+            j = j - 1;
+        }
+
+        itens[j + 1] = atual;
+    }
 
 }
 
@@ -67,8 +78,8 @@ int main() {
     // Chame insertionSort e depois mostrar.
     // --------------------------------------------------------
 
-    // escreva aqui
-
+    insertionSort(itens, 6);
+    mostrar(itens, 6);
 
     return 0;
 }
