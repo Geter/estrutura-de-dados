@@ -76,24 +76,18 @@ void mergeSort(int itens[], int inicio, int fim) {
 
     // 1. Caso base: se o trecho tem um elemento ou menos,
     //    ja esta ordenado. Encerre a funcao aqui.
-    if (inicio >= fim) {
-        return;
-    }
 
     // 2. Calcule a posicao do meio do trecho, entre inicio e fim.
-    int meio = inicio + (fim - inicio) / 2;
 
     // 3. Chame mergeSort para o trecho da esquerda,
     //    que vai de inicio ate o meio.
-    mergeSort(itens, inicio, meio);
 
     // 4. Chame mergeSort para o trecho da direita,
     //    que comeca uma posicao depois do meio e vai ate fim.
-    mergeSort(itens, meio + 1, fim);
 
     // 5. As duas metades agora estao ordenadas.
     //    Chame merge para intercalar as duas.
-    merge(itens, inicio, meio, fim);
+
 }
 
 int main() {
