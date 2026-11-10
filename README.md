@@ -1,11 +1,43 @@
-# Estrutura de Dados
+# Estrutura de Dados em C++
 
-Exercícios da disciplina Estrutura de Dados.
-Tecnologia em Análise e Desenvolvimento de Sistemas, IFSP Câmpus Campos do Jordão.
-Prof. Geterson Policarpo Nunes, 2026/2.
+Repositório de exercícios e atividades práticas desenvolvidos na disciplina de Estrutura de Dados do curso de Análise e Desenvolvimento de Sistemas do Instituto Federal de São Paulo (IFSP) – Câmpus Campos do Jordão.
 
-Cada aula tem uma pasta com os arquivos de exercício. Os arquivos trazem o código
-inicial com os passos comentados. Escreva o código nos pontos marcados com
-`// escreva aqui`, seguindo a ordem dos comentários.
+## Objetivo
+
+Praticar conceitos fundamentais de estruturas de dados e desenvolver habilidades de programação em C++, por meio da resolução de exercícios propostos durante as aulas.
+
+## Conteúdos estudados
+
+- Estruturas de dados.
+- Árvores binárias.
+- Pilhas e filas.
+- Algoritmos de busca e ordenação.
+- Manipulação e organização de dados.
+
+*Os conteúdos são adicionados conforme o andamento da disciplina.*
+
+## Organização do repositório
+
+Cada aula possui uma pasta com seus respectivos exercícios.
+
+Os arquivos disponibilizados pelo professor contêm códigos iniciais e comentários que orientam a implementação. As soluções são desenvolvidas nos pontos indicados no código.
+
+## Tecnologia utilizada
+
+- C++
+
+## Informações acadêmicas
+
+- **Curso:** Análise e Desenvolvimento de Sistemas.
+- **Instituição:** IFSP – Câmpus Campos do Jordão.
+- **Disciplina:** Estrutura de Dados.
+- **Professor:** Geterson Policarpo Nunes.
+- **Período:** 2026/2.
+
+## Autor
+
+Danilo Simplicio
+
+Repositório acadêmico destinado ao aprendizado e à prática de programação em C++.
 
 
