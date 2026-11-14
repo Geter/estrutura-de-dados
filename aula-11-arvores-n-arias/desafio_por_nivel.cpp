@@ -34,7 +34,44 @@ using namespace std;
 // ------------------------------------------------------------
 // PRONTA: o no com vetor de filhos
 // ------------------------------------------------------------
-    void percorrerPorNivel(No* raiz) {
+struct No {
+    string valor;
+    vector<No*> filhos;
+
+    No(string novoValor) {
+        valor = novoValor;
+    }
+};
+
+// ------------------------------------------------------------
+// PRONTA: cria um filho e devolve o endereco dele
+// ------------------------------------------------------------
+No* criarFilho(No* pai, string valor) {
+    No* filho = new No(valor);
+    pai->filhos.push_back(filho);
+    return filho;
+}
+
+// ------------------------------------------------------------
+// PRONTA: monta a arvore de teste
+// ------------------------------------------------------------
+No* montarArvore() {
+    No* raiz = new No("projeto");
+    No* src = criarFilho(raiz, "src");
+    criarFilho(src, "main.cpp");
+    No* estruturas = criarFilho(src, "estruturas");
+    criarFilho(estruturas, "lista.cpp");
+    criarFilho(estruturas, "pilha.cpp");
+    No* docs = criarFilho(raiz, "docs");
+    criarFilho(docs, "manual.pdf");
+    criarFilho(raiz, "README.md");
+    return raiz;
+}
+
+// ------------------------------------------------------------
+// Escreva a funcao percorrerPorNivel.
+// ------------------------------------------------------------
+void percorrerPorNivel(No* raiz) {
     if (raiz == nullptr) {
         return;
     }
@@ -58,4 +95,11 @@ using namespace std;
             fila.push(filho);
         }
     }
+}
+
+int main() {
+    No* raiz = montarArvore();
+    percorrerPorNivel(raiz);
+    cout << endl;
+    return 0;
 }
