@@ -42,7 +42,7 @@ void mostrar(int itens[], int quantidade) {
 //   se itens[j] for maior que itens[j + 1], troque os dois.
 //
 // Para trocar os dois, use a funcao swap:
-//     swap(itens[j], itens[j + 1]);
+//      swap(itens[j], itens[j + 1]);
 //
 // Ela troca o conteudo de duas variaveis e evita escrever as
 // tres linhas da troca com variavel auxiliar. Vem do cabecalho
@@ -51,7 +51,13 @@ void mostrar(int itens[], int quantidade) {
 
 void bubbleSort(int itens[], int quantidade) {
 
-    // escreva aqui
+    for (int i = 0; i < quantidade - 1; i++) {
+        for (int j = 0; j < quantidade - 1 - i; j++) {
+            if (itens[j] > itens[j + 1]) {
+                swap(itens[j], itens[j + 1]);
+            }
+        }
+    }
 
 }
 
@@ -65,8 +71,8 @@ int main() {
     // depois chame mostrar para imprimir o resultado.
     // --------------------------------------------------------
 
-    // escreva aqui
-
+    bubbleSort(itens, 6);
+    mostrar(itens, 6);
 
     return 0;
 }

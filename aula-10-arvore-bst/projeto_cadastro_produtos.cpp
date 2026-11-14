@@ -27,112 +27,24 @@ using namespace std;
 // ------------------------------------------------------------
 // PRONTA: a estrutura do no
 // ------------------------------------------------------------
-struct No {
-    int valor;
-    No* esq;
-    No* dir;
-
-    No(int novoValor) {
-        valor = novoValor;
-        esq = nullptr;
-        dir = nullptr;
-    }
-};
-
-// ------------------------------------------------------------
-// PRONTA: insere um codigo mantendo a propriedade da BST
-// ------------------------------------------------------------
-No* inserir(No* raiz, int valor) {
+    bool existe(No* raiz, int valor) {
     if (raiz == nullptr) {
-        return new No(valor);
-    }
-    if (valor < raiz->valor) {
-        raiz->esq = inserir(raiz->esq, valor);
-    } else if (valor > raiz->valor) {
-        raiz->dir = inserir(raiz->dir, valor);
-    }
-    return raiz;
-}
-
-// ------------------------------------------------------------
-// Escreva a funcao listarEmOrdem.
-// ------------------------------------------------------------
-void listarEmOrdem(No* raiz) {
-    if (raiz == nullptr) {
-        return;
-    }
-    listarEmOrdem(raiz->esq);
-    cout << raiz->valor << " ";
-    listarEmOrdem(raiz->dir);
-}
-
-// ------------------------------------------------------------
-// Escreva a funcao buscarComCaminho.
-// ------------------------------------------------------------
-bool buscarComCaminho(No* raiz, int valor) {
-    if (raiz == nullptr) {
-        cout << "(vazio)" << endl;
         return false;
     }
-    cout << raiz->valor << " ";
     if (valor == raiz->valor) {
-        cout << endl;
         return true;
     }
     if (valor < raiz->valor) {
-        return buscarComCaminho(raiz->esq, valor);
+        return existe(raiz->esq, valor);
     }
-    return buscarComCaminho(raiz->dir, valor);
-}
-
-// ------------------------------------------------------------
-// Escreva a funcao contarProdutos.
-// ------------------------------------------------------------
-int contarProdutos(No* raiz) {
-    if (raiz == nullptr) {
-        return 0;
+    return existe(raiz->dir, valor);
+}if (opcao == 1) {
+    cout << "Codigo: ";
+    cin >> codigo;
+    if (existe(raiz, codigo)) {
+        cout << "Codigo ja cadastrado." << endl;
+    } else {
+        raiz = inserir(raiz, codigo);
+        cout << "Cadastrado." << endl;
     }
-    return 1 + contarProdutos(raiz->esq) + contarProdutos(raiz->dir);
-}
-
-// ------------------------------------------------------------
-// Escreva o menu dentro da main.
-// ------------------------------------------------------------
-int main() {
-    No* raiz = nullptr;
-    int opcao = -1;
-    int codigo;
-
-    while (opcao != 0) {
-        cout << endl;
-        cout << "1 - Cadastrar produto" << endl;
-        cout << "2 - Buscar produto" << endl;
-        cout << "3 - Listar em ordem" << endl;
-        cout << "4 - Total cadastrado" << endl;
-        cout << "0 - Sair" << endl;
-        cout << "Opcao: ";
-        cin >> opcao;
-
-        if (opcao == 1) {
-            cout << "Codigo: ";
-            cin >> codigo;
-            raiz = inserir(raiz, codigo);
-            cout << "Cadastrado." << endl;
-        } else if (opcao == 2) {
-            cout << "Codigo: ";
-            cin >> codigo;
-            cout << "Caminho: ";
-            if (buscarComCaminho(raiz, codigo)) {
-                cout << "Encontrado." << endl;
-            } else {
-                cout << "Nao encontrado." << endl;
-            }
-        } else if (opcao == 3) {
-            listarEmOrdem(raiz);
-            cout << endl;
-        } else if (opcao == 4) {
-            cout << contarProdutos(raiz) << " produtos." << endl;
-        }
-    }
-    return 0;
 }

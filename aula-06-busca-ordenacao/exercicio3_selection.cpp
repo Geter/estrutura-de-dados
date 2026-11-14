@@ -46,7 +46,7 @@ void selectionSort(int itens[], int quantidade) {
         // trecho. Troque itens[i] com itens[menor] usando swap.
         // ----------------------------------------------------
 
-        // escreva aqui
+        swap(itens[i], itens[menor]);
 
     }
 }
@@ -60,8 +60,8 @@ int main() {
     // Chame selectionSort e depois mostrar.
     // --------------------------------------------------------
 
-    // escreva aqui
-
+    selectionSort(itens, 6);
+    mostrar(itens, 6);
 
     return 0;
 }
