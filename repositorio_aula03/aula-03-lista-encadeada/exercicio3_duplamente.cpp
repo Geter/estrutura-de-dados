@@ -25,6 +25,7 @@ using namespace std;
 struct No {
     int valor;
     No* proximo;
+    No* anterior;
 };
 
 int main() {
@@ -36,6 +37,14 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+    No* primeiro = new No;
+    primeiro->valor = 10;
+    
+    No* segundo = new No;
+    segundo->valor = 20;
+    
+    No* terceiro = new No;
+    terceiro->valor = 30;
 
 
     // --------------------------------------------------------
@@ -59,6 +68,14 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+    primeiro->anterior = nullptr;
+    primeiro->proximo = segundo;
+
+    segundo->anterior = primeiro;
+    segundo->proximo = terceiro;
+
+    terceiro->anterior = segundo;
+    terceiro->proximo = nullptr;
 
 
     // --------------------------------------------------------
@@ -72,7 +89,17 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+    No* atual = terceiro;
+
+        while (atual != nullptr) {
+            cout << atual->valor << " ";
+            atual = atual->anterior;
+        }
 
 
-    return 0;
-}
+        return 0;
+    }
+
+
+        return 0;
+    }

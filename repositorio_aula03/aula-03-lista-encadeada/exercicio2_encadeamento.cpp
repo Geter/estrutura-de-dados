@@ -35,6 +35,9 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+     No* primeiro = new No;
+    primeiro->valor = 10;
+
 
 
     // --------------------------------------------------------
@@ -44,6 +47,9 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+    No* segundo = new No;
+    segundo->valor = 20;
+
 
 
     // --------------------------------------------------------
@@ -59,6 +65,9 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+     No* terceiro = new No;
+    terceiro->valor = 30;
+
 
 
     // --------------------------------------------------------
@@ -68,6 +77,10 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+    primeiro->proximo = segundo;
+    segundo->proximo = terceiro;
+    terceiro->proximo = nullptr;
+    No* atual = primeiro;
 
 
     // --------------------------------------------------------
@@ -85,6 +98,11 @@ int main() {
     // --------------------------------------------------------
 
     // escreva aqui
+     while (atual != nullptr) {
+        cout << atual->valor << " ";
+        atual = atual->proximo;
+    }
+
 
 
     return 0;

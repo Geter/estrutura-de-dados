@@ -55,6 +55,22 @@ No* inserir(No* raiz, int valor) {
 }
 
 // ------------------------------------------------------------
+// Verifica se um codigo ja esta cadastrado
+// ------------------------------------------------------------
+bool existe(No* raiz, int valor) {
+    if (raiz == nullptr) {
+        return false;
+    }
+    if (valor == raiz->valor) {
+        return true;
+    }
+    if (valor < raiz->valor) {
+        return existe(raiz->esq, valor);
+    }
+    return existe(raiz->dir, valor);
+}
+
+// ------------------------------------------------------------
 // Escreva a funcao listarEmOrdem.
 // ------------------------------------------------------------
 void listarEmOrdem(No* raiz) {
@@ -116,8 +132,12 @@ int main() {
         if (opcao == 1) {
             cout << "Codigo: ";
             cin >> codigo;
-            raiz = inserir(raiz, codigo);
-            cout << "Cadastrado." << endl;
+            if (existe(raiz, codigo)) {
+                cout << "Codigo ja cadastrado." << endl;
+            } else {
+                raiz = inserir(raiz, codigo);
+                cout << "Cadastrado." << endl;
+            }
         } else if (opcao == 2) {
             cout << "Codigo: ";
             cin >> codigo;

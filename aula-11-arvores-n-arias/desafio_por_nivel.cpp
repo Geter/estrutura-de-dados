@@ -72,7 +72,29 @@ No* montarArvore() {
 // Escreva a funcao percorrerPorNivel.
 // ------------------------------------------------------------
 void percorrerPorNivel(No* raiz) {
+    if (raiz == nullptr) {
+        return;
+    }
 
+    queue<No*> fila;
+    fila.push(raiz);
+
+    bool primeiro = true;
+
+    while (!fila.empty()) {
+        No* atual = fila.front();
+        fila.pop();
+
+        if (!primeiro) {
+            cout << " ";
+        }
+        cout << atual->valor;
+        primeiro = false;
+
+        for (No* filho : atual->filhos) {
+            fila.push(filho);
+        }
+    }
 }
 
 int main() {

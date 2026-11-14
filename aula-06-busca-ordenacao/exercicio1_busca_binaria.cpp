@@ -44,8 +44,19 @@ using namespace std;
 
 int buscaBinaria(int itens[], int quantidade, int procurado) {
 
-    // escreva aqui
+    int inicio = 0;
+    int fim = quantidade - 1;
 
+    while(inicio <= fim){
+        int meio = (inicio + fim) / 2;
+
+        if(itens[meio] == procurado)
+            return meio;
+        if(itens[meio] < procurado)
+            inicio = meio + 1;
+        else
+            fim = meio - 1;
+    }
     return -1;
 }
 
@@ -62,7 +73,8 @@ int main() {
     // resultado.
     // --------------------------------------------------------
 
-    // escreva aqui
+    cout << buscaBinaria(itens, 7, 60) << " ";
+    cout << buscaBinaria(itens, 7, 25);
 
 
     cout << endl;
